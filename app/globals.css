@@ -1,0 +1,455 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Adding Fanavari Bold font face declaration */
+@font-face {
+  font-family: "Fanavari";
+  src: url("/fonts/Fanavari-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Updated font face declarations for IBM Plex Sans Arabic */
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/IBMPlexSansArabic-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/IBMPlexSansArabic-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/IBMPlexSansArabic-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/IBMPlexSansArabic-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  src: url("/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Adding VIPNAGOR font face declaration */
+@font-face {
+  font-family: "VIPNAGOR";
+  src: url("/fonts/VIPNAGOR.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0 0); /* Updated to #373435 equivalent */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0 0); /* Updated to #373435 equivalent */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0 0); /* Updated to #373435 equivalent */
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.22 0 0); /* Updated to #373435 equivalent */
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  /* Updated brand colors to new hex values */
+  --brand-blue: #0082c6;
+  --brand-orange: #ed3237;
+  --brand-text: #373435;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+  /* Updated brand colors to new hex values */
+  --brand-blue: #0082c6;
+  --brand-orange: #ed3237;
+  --brand-text: #373435;
+}
+
+@theme inline {
+  /* Updated font configuration to use Fanavari for titles and IBM Plex Sans Arabic for body text */
+  --font-sans: var(--font-ibm-plex-arabic-regular);
+  --font-serif: var(--font-ibm-plex-arabic-bold);
+  --font-fanavari: var(--font-fanavari);
+  --font-vipnagor: var(--font-vipnagor);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Added brand color utilities */
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-text: var(--brand-text);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-ibm-plex-arabic-regular);
+    font-weight: 400;
+    /* Updated body text color to brand text color */
+    color: var(--brand-text);
+  }
+
+  /* Global component styling with rounded corners and shadows */
+  .card,
+  [class*="card"],
+  .bg-white,
+  .bg-card {
+    @apply rounded-2xl shadow-md;
+  }
+
+  /* Button styling with rounded corners */
+  button,
+  .btn,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    @apply rounded-xl shadow-md;
+    font-family: var(--font-vipnagor);
+    font-weight: normal;
+  }
+
+  /* Form inputs with rounded corners */
+  input,
+  textarea,
+  select {
+    @apply rounded-lg shadow-sm;
+  }
+
+  /* Navigation and menu items with subtle shadows */
+  nav,
+  .nav-item,
+  .menu-item {
+    @apply rounded-lg shadow-md;
+  }
+
+  /* Updated typography system to use VIPNAGOR for all titles and buttons */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .text-4xl,
+  .text-5xl,
+  .text-6xl,
+  .text-3xl,
+  .text-2xl,
+  .text-xl,
+  .site-title {
+    font-family: var(--font-vipnagor);
+    font-weight: normal;
+  }
+
+  /* Card titles and important text */
+  .card-title {
+    font-family: var(--font-vipnagor);
+    font-weight: normal;
+  }
+
+  /* Captions and secondary text */
+  .caption,
+  .muted {
+    font-family: var(--font-ibm-plex-arabic-light);
+    font-weight: 300;
+  }
+
+  /* Footer text uses IBM Plex Sans Arabic Regular */
+  footer {
+    font-family: var(--font-ibm-plex-arabic-regular);
+    font-weight: 400;
+  }
+}
+
+/* Updated custom font classes */
+.font-fanavari {
+  font-family: "Fanavari";
+  font-weight: 700;
+}
+
+.font-ibm-thin {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 100;
+}
+
+.font-ibm-light {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 300;
+}
+
+.font-ibm-regular {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 400;
+}
+
+.font-ibm-medium {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 500;
+}
+
+.font-ibm-semibold {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 600;
+}
+
+.font-ibm-bold {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 700;
+}
+
+.font-vipnagor {
+  font-family: "VIPNAGOR";
+  font-weight: normal;
+}
+
+/* Updated animated blob button to use new brand colors */
+.animated-blob-button {
+  position: relative;
+  font-family: var(--font-vipnagor);
+  font-weight: normal;
+  font-size: 15px;
+  border-radius: 40em;
+  width: 12em;
+  height: 5em;
+  z-index: 1;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.animated-blob-button .text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 5em;
+  border-radius: 47em;
+  border: none;
+  background: linear-gradient(rgba(255, 255, 255, 0.473), rgba(150, 150, 150, 0.25));
+  z-index: 1;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.animated-blob-button .blob {
+  position: absolute;
+  z-index: -1;
+  border-radius: 7em;
+  width: 7em;
+  height: 5em;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.animated-blob-button .blob:nth-child(2) {
+  left: 0em;
+  top: 0;
+  /* Updated to brand orange color */
+  background: var(--brand-orange);
+}
+
+.animated-blob-button .blob:nth-child(3) {
+  left: 1.8em;
+  top: 0;
+  z-index: -1;
+  /* Updated to brand blue color */
+  background: var(--brand-blue);
+}
+
+.animated-blob-button .blob:nth-child(4) {
+  left: 4em;
+  top: -1em;
+  /* Updated to brand orange color */
+  background: var(--brand-orange);
+}
+
+.animated-blob-button .blob:nth-child(5) {
+  left: 4.3em;
+  top: 1.6em;
+  /* Updated to brand blue color */
+  background: var(--brand-blue);
+}
+
+.animated-blob-button:hover .blob:nth-child(2) {
+  /* Updated to brand blue color */
+  background: var(--brand-blue);
+}
+
+.animated-blob-button:hover .blob:nth-child(3) {
+  /* Updated to brand orange color */
+  background: var(--brand-orange);
+}
+
+.animated-blob-button:hover .blob:nth-child(4) {
+  /* Updated to brand blue color */
+  background: var(--brand-blue);
+}
+
+.animated-blob-button:hover .blob:nth-child(5) {
+  /* Updated to brand orange color */
+  background: var(--brand-orange);
+}
+
+.animated-blob-button:active {
+  border: 2px solid white;
+}
+
+/* Updated GitHub icon with brand blue hover color */
+.github-icon-only {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border: 2px solid #e1e5e9;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.github-icon-only:hover {
+  background-color: #f6f8fa;
+  border-color: #d0d7de;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.15), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.github-icon-only .icon svg {
+  width: 24px;
+  height: 24px;
+  /* Updated to brand text color */
+  fill: var(--brand-text);
+  transition: fill 0.3s ease;
+}
+
+.github-icon-only:hover .icon svg {
+  /* Updated to brand blue color */
+  fill: var(--brand-blue);
+}
