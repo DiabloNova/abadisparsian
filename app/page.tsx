@@ -237,7 +237,11 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="mb-4">
-                <img src="/logo.png" alt="آبادیس پارسیان" className="h-6 object-contain brightness-0 invert" />
+                <img
+                  src="/logo.png"
+                  alt="لوگو آبادیس پارسیان"
+                  className="h-6 object-contain brightness-0 invert"
+                />
               </div>
               <p className="text-gray-400 text-sm mb-4 font-fanavari">مشاوره تخصصی تحصیل در روسیه</p>
               <div className="flex space-x-4">
