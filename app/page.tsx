@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import VirtualTour from "@/components/virtual-tour"
@@ -21,6 +22,19 @@ import {
   Mail,
   MapPin,
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "تحصیل در روسیه با آبادیس پارسیان | مشاوره تخصصی و پذیرش تضمینی",
+  description:
+    "آبادیس پارسیان با بیش از ۱۰ سال سابقه، ارائه دهنده خدمات مشاوره تحصیلی و اخذ پذیرش از دانشگاه های معتبر روسیه. تحصیل آسان با بهترین هزینه.",
+  keywords: [
+    "تحصیل در روسیه",
+    "دانشگاه های روسیه",
+    "مهاجرت تحصیلی به روسیه",
+    "پذیرش تحصیلی روسیه",
+    "آبادیس پارسیان",
+  ],
+}
 
 export default function HomePage() {
   return (
